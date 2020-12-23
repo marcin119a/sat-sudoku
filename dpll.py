@@ -1,3 +1,8 @@
+def __select_literal(cnf):
+    for c in cnf:
+        for literal in c:
+            return literal[0]
+     
 def dpll(cnf, assignments={}):
  
     if len(cnf) == 0:
