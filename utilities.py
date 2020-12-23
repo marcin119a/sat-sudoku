@@ -11,11 +11,11 @@ def exactly_one(variables):
     return cnf
 
 
-def transform(i, j, k):
+def transform(i, j, k, N):
     return i*N*N + j*N + k + 1
 
 
-def inverse_transform(v):
+def inverse_transform(v, N):
     v, k = divmod(v-1, N)
     v, j = divmod(v, N)
     v, i = divmod(v, N)
