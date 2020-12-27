@@ -3,7 +3,7 @@ import pycosat
 
 
 
-def sat_sudoku(N, M, constrains):
+def sat_sudoku(N, M, constraints):
     cnf = []
 
     # Cell, row and column constraints

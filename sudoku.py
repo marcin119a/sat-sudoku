@@ -11,4 +11,4 @@ if __name__ == "__main__":
         x = readSudoku(filename)
         n = int(math.sqrt(x.shape[0]))
         constains = mapToConstrains(x)
-        sat_sudoku(N**2, N, constains)
+        sat_sudoku(n**2, n, constains)
