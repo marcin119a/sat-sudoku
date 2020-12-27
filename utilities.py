@@ -1,3 +1,5 @@
+import numpy as np 
+
 def exactly_one(variables):
     cnf = [ variables ]
     n = len(variables)
@@ -20,3 +22,25 @@ def inverse_transform(v, N):
     v, j = divmod(v, N)
     v, i = divmod(v, N)
     return i, j, k
+
+def readSudoku(fileName):
+    """
+    Reads a Sudoku grid from a text file
+    Empty cells are presented by 0
+    Convert to internal format where empty cells are -1
+    """
+    
+    data = np.loadtxt(fileName, skiprows=0, delimiter=" ", dtype=np.int);
+    
+    n = data.shape[0]
+    return (data - np.ones([n, n], dtype=np.int))
+
+def mapToConstrains(array):
+    constrains = []
+    print(array)
+    for i in range(len(array)):
+        for j in range(len(array)):
+            if array[i,j] != -1:
+                constrains.append((i+1,j+1, array[i,j]+1))
+    
+    return constrains
