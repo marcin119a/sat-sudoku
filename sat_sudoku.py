@@ -28,7 +28,7 @@ def sat_sudoku(N, M, constraints):
 
 
 
-    cnf = cnf + [[transform(z[0], z[1], z[2]) - 1, N] for z in constraints]
+    cnf = cnf + [[transform(z[0], z[1], z[2] - 1, N)] for z in constraints]
     dict_s = {}
     for x in constraints:
         dict_s[(x[0] + 1) * (x[1] + 1)] = x[2]
